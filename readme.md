@@ -13,7 +13,7 @@ lightning-cli lnaddresspay address msatoshis [label] [riskfactor] [maxfeepercent
 
 E.g.
 ```bash
-lightning-cli lnaddresspay address123@lightning.com 1000000 [label] [riskfactor] [maxfeepercent] [retry_for] [maxdelay] [exemptfee]
+lightning-cli lnaddresspay address123@lightning.com 1000000
 ```
 
 ## Demo
