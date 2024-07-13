@@ -17,4 +17,5 @@ def test_ln_address_pay(node_factory):
     l1.daemon.wait_for_logs(["Plugin ln-address-pay initialized",
                              "Plugin ln-address-pay initialized",
                              "Plugin ln-address-pay initialized"])
+    l1.rpc.plugin_stop(plugin_path)
 
