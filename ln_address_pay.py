@@ -53,16 +53,13 @@ def pay_to_lightning_address(plugin, ln_address: str, msatoshi: int, label=None,
         return build_error_message(f"Could not retrieve an invoice for {ln_address}")
     
     try:
-        payment_result = plugin.rpc.pay(bolt11=payment_invoice, label=label,
+        return plugin.rpc.pay(bolt11=payment_invoice, label=label,
                 riskfactor=riskfactor, maxfeepercent=maxfeepercent,
                 retry_for=retry_for, maxdelay=maxdelay, exemptfee=exemptfee)
     except RpcError as e:
         return e.error
     except Exception as e:
         return build_error_message(f"An error occurred while processing the payment: {e}")
-    
-    return payment_result
-    
 
 def retrieve_ln_service_config(url) -> LnServiceConfigResponse:
     domain = url.split("@")[1]
